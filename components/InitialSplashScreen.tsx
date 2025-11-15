@@ -43,33 +43,33 @@ export function InitialSplashScreen({ onComplete, duration = 3000 }: Props) {
   }, [duration, onComplete]);
 
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center z-50 font-mono">
-      <div className="text-center space-y-8 w-full max-w-md px-4">
+    <div className="fixed inset-0 bg-black flex items-center justify-center z-50 font-mono p-4">
+      <div className="text-center space-y-4 sm:space-y-8 w-full max-w-md">
         {/* Title */}
-        <div className="space-y-2">
-          <h1 className="text-2xl text-green-400 font-bold tracking-wider">
+        <div className="space-y-1 sm:space-y-2">
+          <h1 className="text-xl sm:text-2xl text-green-400 font-bold tracking-wider">
             MOZART
           </h1>
           <p className="text-xs text-gray-500">Terminal Portfolio v1.0</p>
         </div>
 
         {/* Status Messages */}
-        <div className="space-y-4">
-          <div className="h-12 flex items-center justify-center">
-            <p className="text-sm text-green-400 min-h-5">
+        <div className="space-y-3 sm:space-y-4">
+          <div className="h-8 sm:h-12 flex items-center justify-center">
+            <p className="text-xs sm:text-sm text-green-400 min-h-5 break-words px-2">
               {currentStatus}
             </p>
           </div>
 
           {/* Progress Bar */}
-          <div className="space-y-2">
-            <div className="border border-green-400 h-6 relative overflow-hidden bg-black">
+          <div className="space-y-1 sm:space-y-2">
+            <div className="border border-green-400 h-5 sm:h-6 relative overflow-hidden bg-black">
               <div
                 className="h-full bg-green-400 transition-all duration-300 flex items-center justify-end pr-2"
                 style={{ width: `${progress}%` }}
               >
                 {progress > 0 && progress < 100 && (
-                  <span className="text-black text-xs font-bold">
+                  <span className="text-black text-xs font-bold hidden sm:inline">
                     {Math.round(progress)}%
                   </span>
                 )}
@@ -84,7 +84,7 @@ export function InitialSplashScreen({ onComplete, duration = 3000 }: Props) {
         {/* Spinner at bottom */}
         <div className="flex justify-center">
           <div className="inline-block">
-            <div className="text-green-400 text-sm animate-spin" style={{ animationDuration: "0.8s" }}>
+            <div className="text-green-400 text-sm sm:text-base animate-spin" style={{ animationDuration: "0.8s" }}>
               ⟳
             </div>
           </div>

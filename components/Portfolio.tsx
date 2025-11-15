@@ -51,15 +51,16 @@ export function Portfolio() {
           }, 800);
         }}
         disabled={isLoading}
-        className="absolute top-4 right-4 z-40 px-4 py-2 bg-green-400 text-black font-mono text-sm hover:bg-cyan-400 transition-colors rounded disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute top-2 right-2 sm:top-4 sm:right-4 z-40 px-2 sm:px-4 py-1 sm:py-2 bg-green-400 text-black font-mono text-xs sm:text-sm hover:bg-cyan-400 transition-colors rounded disabled:opacity-50 disabled:cursor-not-allowed"
         title="Press Ctrl+T (or Cmd+T on Mac) to toggle"
       >
-        {mode === "cli" ? "Switch to GUI" : "Switch to CLI"}
+        <span className="hidden sm:inline">{mode === "cli" ? "Switch to GUI" : "Switch to CLI"}</span>
+        <span className="sm:hidden">{mode === "cli" ? "GUI" : "CLI"}</span>
       </button>
 
       {/* Mode Indicator */}
-      <div className="absolute top-4 left-4 z-50 text-green-400 font-mono text-xs bg-black px-3 py-2 border border-green-400">
-        MODE: {mode.toUpperCase()}
+      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50 text-green-400 font-mono text-xs bg-black px-2 sm:px-3 py-1 sm:py-2 border border-green-400">
+        {mode.toUpperCase()}
       </div>
 
       {/* Render Active Mode */}

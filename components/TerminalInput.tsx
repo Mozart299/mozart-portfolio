@@ -46,8 +46,9 @@ export function TerminalInput({ onSubmit }: Props) {
   };
 
   return (
-    <div className="flex items-center gap-2 p-4 border-t border-gray-700 font-mono text-sm bg-black">
-      <span className="text-cyan-400 flex-shrink-0">user@portfolio</span>
+    <div className="flex items-center gap-1 sm:gap-2 p-2 sm:p-4 border-t border-gray-700 font-mono text-xs sm:text-sm bg-black flex-wrap">
+      <span className="text-cyan-400 flex-shrink-0 hidden sm:inline">user@portfolio</span>
+      <span className="text-cyan-400 flex-shrink-0 sm:hidden">user</span>
       <span className="text-white flex-shrink-0">:</span>
       <span className="text-blue-400 flex-shrink-0">~</span>
       <span className="text-white flex-shrink-0">$ </span>
@@ -57,7 +58,7 @@ export function TerminalInput({ onSubmit }: Props) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="flex-1 bg-transparent text-green-400 outline-none font-mono"
+        className="flex-1 bg-transparent text-green-400 outline-none font-mono min-w-0"
         autoComplete="off"
         spellCheck="false"
       />
