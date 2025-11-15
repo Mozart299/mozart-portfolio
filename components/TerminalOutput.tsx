@@ -15,19 +15,20 @@ export function TerminalOutput({ outputs }: Props) {
   }, [outputs]);
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 font-mono text-sm text-green-400">
+    <div className="flex-1 overflow-y-auto p-2 sm:p-4 font-mono text-xs sm:text-sm text-green-400">
       {outputs.map((output) => (
         <div key={output.id}>
           {output.type === "input" ? (
-            <div className="text-green-400">
-              <span className="text-cyan-400">user@portfolio</span>
+            <div className="text-green-400 break-words">
+              <span className="text-cyan-400 hidden sm:inline">user@portfolio</span>
+              <span className="text-cyan-400 sm:hidden">user</span>
               <span className="text-white">:</span>
               <span className="text-blue-400">~</span>
               <span className="text-white">$ </span>
-              <span>{output.content}</span>
+              <span className="break-all">{output.content}</span>
             </div>
           ) : (
-            <div className="whitespace-pre-wrap text-green-400 mt-1 mb-2">
+            <div className="whitespace-pre-wrap text-green-400 mt-1 mb-2 break-words overflow-x-auto">
               {output.content}
             </div>
           )}
