@@ -9,81 +9,82 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    id: "dukari",
-    name: "Dukari",
-    description: "A full-stack e-commerce platform for buying and selling goods",
-    technologies: ["Next.js", "React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com/yourusername/dukari-frontend",
-    liveUrl: "https://dukari.com",
-    featured: true,
-  },
-  {
-    id: "airbnb-verify",
-    name: "Airbnb Verify",
-    description: "Verification system for Airbnb property listings",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
-    github: "https://github.com/yourusername/airbnb-verify",
-    featured: true,
-  },
-  {
-    id: "playlist-pulse",
-    name: "Playlist Pulse",
-    description: "Music playlist analytics and recommendation engine",
-    technologies: ["React", "Node.js", "Spotify API", "Firebase"],
-    github: "https://github.com/yourusername/playlistpulse-frontend",
-  },
+
   {
     id: "nambi-notes",
-    name: "Nambi Notes",
-    description: "Collaborative note-taking application with real-time sync",
-    technologies: ["Next.js", "React", "Firebase", "Tailwind CSS"],
-    github: "https://github.com/yourusername/nambi-notes",
+    name: "Nambi Notes Publishing House",
+    description: "A modern publishing house website for Nambi Notes that showcases books, manages authors, facilitates book pitches, and enables online book sales with integrated PayPal checkout functionality. The site features animated UI components and responsive design.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "PayPal SDK"],
+    github: "https://github.com/Mozart299/nambi-notes",
+    liveUrl: "https://nambinotes.com",
   },
   {
-    id: "music-farm",
-    name: "Music on the Farm",
-    description: "Event management platform for outdoor music festivals",
-    technologies: ["React", "Express", "PostgreSQL", "Socket.io"],
-    github: "https://github.com/yourusername/musiconthefarm",
-    liveUrl: "https://musiconthefarm.com",
+    id: "musiconthefarm",
+    name: "Kitty Town Music & Arts School",
+    description: "A vibrant web platform for a music and arts education school in Uganda that offers music lessons, dance classes, and visual arts programs with a scholarship model supporting students from underprivileged backgrounds.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Nodemailer", "Zoho Mail"],
+    github: "https://github.com/Mozart299/musiconthefarm",
+    liveUrl: "https://www.musiconthefarm.com",
   },
   {
+    id: "the-one-percent-standard",
+    name: "The 1% Standard",
+    description: "A fitness coaching and digital products platform offering personalized training programs, nutrition guidance, and self-optimization resources.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Substack (RSS feed integration)", "Node.js"],
+    github: "https://github.com/Mozart299/the-one-percent-standard",
+    liveUrl: "https://www.theonepercentstandard.com",
+  },
+
+    {
     id: "compatibility-matrix",
     name: "Compatibility Matrix",
-    description: "Tool for tracking software and hardware compatibility",
-    technologies: ["Next.js", "React", "PostgreSQL", "TypeScript"],
-    github: "https://github.com/yourusername/compatibility-matrix",
+    description: "A modern web application for discovering deeper connections through advanced compatibility analysis. Analyzes multiple dimensions of personality, values, and communication styles with biometric integration (HRV) to help users build stronger relationships.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Radix UI", "TanStack React Query", "Axios", "Recharts", "OAuth 2.0", "Crypto-JS", "FastAPI", "Python", "PostgreSQL", "Supabase", "SQLAlchemy", "Pydantic", "Docker", "GitHub Actions"],
+    github: "https://github.com/Mozart299/compatibility-matrix",
+    liveUrl: "https://compatibility-matrix.vercel.app",
   },
   {
-    id: "survey-generator",
-    name: "Survey Generator",
-    description: "Create, distribute and analyze surveys with advanced analytics",
-    technologies: ["React", "Node.js", "MongoDB", "Chart.js"],
-    github: "https://github.com/yourusername/survey-generator",
-    featured: true,
-  },
-  {
-    id: "fleet-analytics",
-    name: "Fleet Analytics",
-    description: "Data pipeline and analytics for fleet vehicle tracking",
-    technologies: ["Python", "Kafka", "PostgreSQL", "Grafana"],
-    github: "https://github.com/yourusername/fleet-analytics-data-pipeline",
+    id: "radiant-smile-foundation",
+    name: "Radiant Smile Foundation Website",
+    description: "A website for our charity organisation",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "Framer Motion", "TypeScript"],
+    github: "https://github.com/Mozart299/rsf-website",
+    liveUrl: "https://radiant-smile-foundation.vercel.app",
   },
 ];
 
-export const about = `Hi! I'm a full-stack developer with a passion for building web applications that solve real problems.
+export const name = "Ssendegeya Kyeyune Peter";
+
+export const about = `Hi! I'm a software developer with a passion for solving probblems.
 
 I have experience with:
-- Frontend: React, Next.js, TypeScript, Tailwind CSS
-- Backend: Node.js, Express, Python
-- Databases: MongoDB, PostgreSQL, Firebase
-- Tools: Git, Docker, AWS, Firebase
+- Frontend: HTML5, CSS3, Next.js, TypeScript, Tailwind CSS, Bootstrap
+- Backend: Node.js, Express, Python (FastAPI), Strapi, Symfony
+- Databases: MySQL, MongoDB, PostgreSQL, Supabase
+- UI/UX Design: Adobe XD, Figma
+- Mobile Development: Flutter, Firebase
+- Cloud: Google Cloud Platform
+- Automation & Workflows: N8n
+- Deployment: Render, Vercel, App Store, Google Play Store
 
 I love working on projects that combine great UX with solid engineering practices.`;
 
+export const certifications = [
+  {
+    title: "Modernize Infrastructure and Applications with Google Cloud",
+    issuer: "Udacity",
+    credentialUrl: "https://confirm.udacity.com/e/e5cff1ec-2019-11ef-8e8c-bf081dcbc0f0",
+  },
+  {
+    title: "Operationalizing Cloud Security with Deepfence Threat Mapper",
+    issuer: "Udacity",
+    credentialUrl: "https://confirm.udacity.com/e/017c7350-1360-11ef-899c-3b4eb00f53ed",
+  },
+];
+
 export const contact = {
-  email: "your.email@example.com",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  email: "peterkayk@gmail.com",
+  phone: "(+256) 780898348",
+  github: "https://github.com/Mozart299",
+  linkedin: "https://www.linkedin.com/in/peterssendegeya/",
 };

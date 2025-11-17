@@ -1,4 +1,4 @@
-import { projects, about, contact } from "./projects";
+import { projects, about, contact, name } from "./projects";
 
 export interface TerminalOutput {
   id: string;
@@ -62,7 +62,7 @@ Usage: Type a command and press Enter`;
   },
 
   contact: () => {
-    return `Contact Information:\n\nEmail: ${contact.email}\nGitHub: ${contact.github}\nLinkedIn: ${contact.linkedin}`;
+    return `Contact Information:\n\nEmail: ${contact.email}\nPhone: ${contact.phone}\nGitHub: ${contact.github}\nLinkedIn: ${contact.linkedin}`;
   },
 
   github: (args: string[]) => {
@@ -84,7 +84,7 @@ Usage: Type a command and press Enter`;
   },
 
   whoami: () => {
-    return "user@portfolio:~$";
+    return name;
   },
 
   echo: (args: string[]) => {

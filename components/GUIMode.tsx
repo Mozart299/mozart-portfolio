@@ -1,6 +1,6 @@
 "use client";
 
-import { projects, about, contact } from "@/lib/projects";
+import { projects, about, contact, name } from "@/lib/projects";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -58,7 +58,8 @@ export function GUIMode() {
           <div className="space-y-4">
             <div className="text-cyan-400">$ whoami</div>
             <div className="text-green-400 ml-2 sm:ml-4 break-words">
-              <p className="text-sm sm:text-base">Full Stack Developer | Web Application Specialist</p>
+              <p className="text-sm sm:text-base font-semibold">{name}</p>
+              <p className="mt-1 text-gray-400 text-xs sm:text-sm">Software Developer</p>
               <p className="mt-2 text-gray-500 text-xs sm:text-sm">
                 Building elegant solutions for complex problems.
               </p>
@@ -172,6 +173,15 @@ export function GUIMode() {
                   className="text-blue-400 hover:underline ml-2 block sm:inline break-all"
                 >
                   {contact.email}
+                </Link>
+              </div>
+              <div className="break-words">
+                <span className="text-cyan-400">Phone:</span>
+                <Link
+                  href={`tel:${contact.phone}`}
+                  className="text-blue-400 hover:underline ml-2 block sm:inline break-all"
+                >
+                  {contact.phone}
                 </Link>
               </div>
               <div className="break-words">
