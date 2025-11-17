@@ -7,15 +7,7 @@ import { TerminalInput } from "./TerminalInput";
 import { v4 as uuidv4 } from "uuid";
 
 export function CLIMode() {
-  const [outputs, setOutputs] = useState<TerminalOutputType[]>([
-    {
-      id: uuidv4(),
-      type: "output",
-      content:
-        "Welcome to Mozart Portfolio Terminal\nType 'help' for available commands",
-      timestamp: Date.now(),
-    },
-  ]);
+  const [outputs, setOutputs] = useState<TerminalOutputType[]>([]);
 
   const handleCommand = (input: string) => {
     // Add input to outputs
@@ -50,9 +42,21 @@ export function CLIMode() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-black">
-      <TerminalOutput outputs={outputs} />
-      <TerminalInput onSubmit={handleCommand} />
+    <div className="flex flex-col h-screen bg-black overflow-hidden">
+      {/* Welcome Message */}
+      <div className="p-2 sm:p-4 font-mono text-xs sm:text-sm text-green-400 border-b border-gray-700 flex-shrink-0">
+        Welcome to Mozart Portfolio Terminal<br />
+        Type 'help' for available commands
+      </div>
+
+      {/* Scrollable Output Area */}
+      <div className="flex-1 overflow-y-auto flex flex-col">
+        <TerminalOutput outputs={outputs} />
+        {/* Input appears at the bottom and scrolls with content */}
+        <div className="flex-shrink-0">
+          <TerminalInput onSubmit={handleCommand} />
+        </div>
+      </div>
     </div>
   );
 }

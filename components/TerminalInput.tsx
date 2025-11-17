@@ -46,7 +46,7 @@ export function TerminalInput({ onSubmit }: Props) {
   };
 
   return (
-    <div className="flex items-center gap-1 sm:gap-2 p-2 sm:p-4 border-t border-gray-700 font-mono text-xs sm:text-sm bg-black flex-wrap">
+    <div className="flex items-center gap-1 sm:gap-2 p-2 sm:p-4 border-b border-gray-700 font-mono text-xs sm:text-sm bg-black flex-wrap flex-shrink-0">
       <span className="text-cyan-400 flex-shrink-0 hidden sm:inline">user@portfolio</span>
       <span className="text-cyan-400 flex-shrink-0 sm:hidden">user</span>
       <span className="text-white flex-shrink-0">:</span>
