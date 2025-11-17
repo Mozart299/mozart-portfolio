@@ -1,4 +1,4 @@
-import { projects, about, contact, name } from "./projects";
+import { projects, about, contact, name, certifications } from "./projects";
 
 export interface TerminalOutput {
   id: string;
@@ -58,7 +58,10 @@ Usage: Type a command and press Enter`;
   },
 
   about: () => {
-    return about;
+    const certificationsText = certifications
+      .map((cert) => `\n${cert.title}\n  Issuer: ${cert.issuer}\n  Credential: ${cert.credentialUrl}`)
+      .join("\n");
+    return `${about}\n\nCertifications:${certificationsText}`;
   },
 
   contact: () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { projects, about, contact, name } from "@/lib/projects";
+import { projects, about, contact, name, certifications } from "@/lib/projects";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -158,6 +158,30 @@ export function GUIMode() {
             <div className="text-cyan-400 text-sm sm:text-base">$ cat about.txt</div>
             <div className="ml-2 sm:ml-4 space-y-2 text-green-400 whitespace-pre-wrap text-xs sm:text-sm">
               {about}
+            </div>
+
+            <div className="mt-6 text-cyan-400 text-sm sm:text-base">$ cat certifications.txt</div>
+            <div className="ml-2 sm:ml-4 space-y-3 text-green-400 text-xs sm:text-sm">
+              {certifications.map((cert, index) => (
+                <div key={index} className="border-l border-gray-600 pl-3">
+                  <div className="break-words">
+                    <span className="text-cyan-400">Title:</span> {cert.title}
+                  </div>
+                  <div className="break-words">
+                    <span className="text-cyan-400">Issuer:</span> {cert.issuer}
+                  </div>
+                  <div className="break-words">
+                    <Link
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400 hover:underline"
+                    >
+                      View Credential →
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
