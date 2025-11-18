@@ -51,6 +51,13 @@ export const projects: Project[] = [
     github: "https://github.com/Mozart299/rsf-website",
     liveUrl: "https://radiant-smile-foundation.vercel.app",
   },
+    {
+    id: "sample-dev-portfolio-site",
+    name: "Neon Portfolio",
+    description: "A sample developer portfolio site",
+    technologies: ["Webflow", "Webflow Cloud"],
+    liveUrl: "https://mozart-8368c3.webflow.io/neon-portfolio",
+  },
 ];
 
 export const name = "Ssendegeya Kyeyune Peter";
@@ -65,6 +72,7 @@ I have experience with:
 - Mobile Development: Flutter, Firebase
 - Cloud: Google Cloud Platform
 - Automation & Workflows: N8n
+- No-Code Platforms: Webflow, Webflow Cloud
 - Deployment: Render, Vercel, App Store, Google Play Store
 
 I love working on projects that combine great UX with solid engineering practices.`;
