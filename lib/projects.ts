@@ -9,7 +9,22 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-
+  {
+    id: "bill-splitter",
+    name: "It's Happy Hour Somewhere",
+    description: "A mobile-first bill splitting app designed to help groups track individual orders and bills when dining together. Features real-time synchronization so everyone can see what's been ordered and how much each person owes, with QR code support for easy session joining.",
+    technologies: ["Next.js", "React", "TypeScript", "Nx", "Supabase", "Tailwind CSS", "QRCode.react"],
+    github: "https://github.com/Mozart299/its-happy-hour-somewhere",
+    liveUrl: "https://its-happy-hour-somewhere.vercel.app/",
+  },
+  {
+    id: "triptrack",
+    name: "TripTrack",
+    description: "A mobile-first trip tracking and expense management application for managing journeys, activities, and splitting costs among participants. Features journey planning, activity timeline tracking, and automatic expense splitting with real-time updates.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Nx"],
+    github: "https://github.com/Mozart299/triptrack",
+    liveUrl: "https://www.triptrack.xyz",
+  },
   {
     id: "nambi-notes",
     name: "Nambi Notes Publishing House",
