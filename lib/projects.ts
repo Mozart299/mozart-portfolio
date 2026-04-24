@@ -25,6 +25,7 @@ export const projects: Project[] = [
     description: "A comprehensive Buy Now Pay Later fintech platform with multi-role dashboards for admins, agents, merchants, companies, and employees. Features AI-powered credit scoring, real-time fraud detection, float management, payroll deduction integration, and automated compliance reporting.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Redis", "JWT", "Zod"],
     github: "https://github.com/Mozart299/bnpl-frontend",
+    liveUrl: "https://bnpl-frontend-rosy.vercel.app",
     featured: true,
   },
   {
@@ -63,6 +64,7 @@ export const projects: Project[] = [
     description: "A web app for Ugandan businesses to upload, parse, and validate URA (Uganda Revenue Authority) invoices. Supports PDF upload and QR code scanning to extract invoice data, check tax credit eligibility, and track claimable VAT amounts. Features tiered access plans (Free/Pro/Enterprise).",
     technologies: ["Next.js", "React", "TypeScript", "Supabase", "pdfjs-dist", "Tailwind CSS"],
     github: "https://github.com/Mozart299/invoiceug",
+    liveUrl: "https://invoiceug.vercel.app",
   },
   {
     id: "dukari",
@@ -70,6 +72,7 @@ export const projects: Project[] = [
     description: "A multi-vendor e-commerce marketplace built for Ugandan businesses, featuring vendor storefronts, product management, order processing, and payment integration.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Redis"],
     github: "https://github.com/Mozart299/dukari-frontend",
+    liveUrl: "https://dukari.vercel.app",
   },
   // Tier 3 — Client / production sites
   {
@@ -117,6 +120,7 @@ export const projects: Project[] = [
     description: "An Africa-focused travel guide with an interactive world map, curated destination profiles, hidden gems, and trip journals. Users can click map pins to explore destinations across the continent.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MapLibre GL"],
     github: "https://github.com/Mozart299/wanderlust",
+    liveUrl: "https://wanderlust-site.vercel.app",
   },
   {
     id: "jk-gold-souk",
@@ -124,6 +128,7 @@ export const projects: Project[] = [
     description: "An e-commerce platform for investment-grade gold — bars, coins, and bullion. Features a product catalog, live gold price tracking, and contact functionality with a focus on transparency and trust.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/Mozart299/jk-gold-souk",
+    liveUrl: "https://jk-gold-souk.vercel.app",
   },
   {
     id: "radiant-smile-foundation",
