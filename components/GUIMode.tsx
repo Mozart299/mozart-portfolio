@@ -65,9 +65,13 @@ export function GUIMode() {
             <div className="text-cyan-400">$ whoami</div>
             <div className="text-green-400 ml-2 sm:ml-4 break-words">
               <p className="text-sm sm:text-base font-semibold">{name}</p>
-              <p className="mt-1 text-gray-400 text-xs sm:text-sm">Software Developer</p>
+              <p className="mt-1 text-gray-400 text-xs sm:text-sm">Frontend Software Engineer · AirQo</p>
               <p className="mt-2 text-gray-500 text-xs sm:text-sm">
                 Building elegant solutions for complex problems.
+              </p>
+              <p className="mt-3 inline-flex items-center gap-2 text-xs sm:text-sm text-green-400 border border-green-400 px-3 py-1">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block"></span>
+                Open to new opportunities
               </p>
             </div>
             <div className="mt-8 text-cyan-400">$ ls projects</div>
@@ -85,10 +89,13 @@ export function GUIMode() {
                 <button
                   key={project.id}
                   onClick={() => setSelectedProject(project.id)}
-                  className="block text-green-400 hover:text-cyan-400 hover:underline text-left w-full text-xs sm:text-sm break-words"
+                  className="block text-left w-full text-xs sm:text-sm break-words group"
                 >
                   <span className="text-gray-500 hidden sm:inline">-rw-r--r--</span>
-                  <span className="ml-0 sm:ml-4">{project.id}</span>
+                  <span className={`ml-0 sm:ml-4 group-hover:text-cyan-400 group-hover:underline ${project.featured ? "text-yellow-400" : "text-green-400"}`}>
+                    {project.featured && <span className="mr-2">★</span>}
+                    {project.name}
+                  </span>
                   <span className="ml-2 sm:ml-4 text-gray-500 hidden sm:inline">
                     {project.description.substring(0, 50)}...
                   </span>

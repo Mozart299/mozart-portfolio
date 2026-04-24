@@ -27,9 +27,9 @@ Usage: Type a command and press Enter`;
 
   ls: () => {
     const projectList = projects
-      .map((p) => `  ${p.id.padEnd(20)} - ${p.description.substring(0, 40)}...`)
+      .map((p) => `  ${(p.featured ? "★ " : "  ")}${p.id.padEnd(28)} ${p.name}`)
       .join("\n");
-    return `Projects:\n${projectList}\n\nUse 'cat <project>' to view details or 'help' for more commands`;
+    return `Projects:\n${projectList}\n\nUse 'cat <project-id>' to view details or 'help' for more commands`;
   },
 
   cat: (args: string[]) => {
