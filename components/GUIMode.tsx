@@ -3,6 +3,7 @@
 import { projects, about, contact, name, certifications, experience } from "@/lib/projects";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Section = "home" | "projects" | "experience" | "about" | "contact";
 
@@ -114,6 +115,7 @@ export function GUIMode() {
               ← Back to projects
             </button>
             <div className="text-cyan-400 text-sm sm:text-base break-words">$ cat {selectedProjectData.id}</div>
+            <ProjectScreenshot id={selectedProjectData.id} name={selectedProjectData.name} />
             <div className="ml-2 sm:ml-4 space-y-2 text-green-400 text-xs sm:text-sm">
               <div className="break-words">
                 <span className="text-cyan-400">Name:</span>{" "}
@@ -270,6 +272,23 @@ export function GUIMode() {
           </div>
         )}
       </main>
+    </div>
+  );
+}
+
+function ProjectScreenshot({ id, name }: { id: string; name: string }) {
+  const [hidden, setHidden] = useState(false);
+  if (hidden) return null;
+  return (
+    <div className="ml-2 sm:ml-4 mt-2 mb-2 border border-gray-700">
+      <Image
+        src={`/project-previews/${id}-preview.png`}
+        alt={`${name} preview`}
+        width={800}
+        height={450}
+        className="w-full object-cover"
+        onError={() => setHidden(true)}
+      />
     </div>
   );
 }
