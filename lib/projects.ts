@@ -164,7 +164,7 @@ export const experience: Experience[] = [
   {
     company: "AirQo",
     role: "Frontend Software Engineer",
-    type: "Full-Time",
+    type: "Full-Time · Remote",
     period: "Nov 2024 – Present",
     bullets: [
       "Develop and maintain the AirQo Mobile Application (Flutter), translating Figma designs into production code and integrating REST APIs for real-time air quality data across African cities.",
