@@ -105,6 +105,7 @@ export const projects: Project[] = [
     description: "A content-managed website for the SUNRISE university consortium — a multi-institutional research and education initiative spanning African and European partner universities including Makerere, Kyambogo, and Strathmore. Features dynamic content via Sanity CMS, partner showcasing, and contact functionality.",
     technologies: ["Next.js", "React", "TypeScript", "Sanity CMS", "Tailwind CSS", "Resend"],
     github: "https://github.com/Mozart299/sunrise",
+    liveUrl: "https://project-sunrise.org",
   },
   // Tier 4 — Prototypes / work in progress
   {
