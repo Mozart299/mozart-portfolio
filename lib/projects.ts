@@ -9,6 +9,46 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  // Tier 1 — Engineering depth
+  {
+    id: "compatibility-matrix",
+    name: "Compatibility Matrix",
+    description: "A modern web application for discovering deeper connections through advanced compatibility analysis. Analyzes multiple dimensions of personality, values, and communication styles with biometric integration (HRV) to help users build stronger relationships.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Radix UI", "TanStack React Query", "Axios", "Recharts", "OAuth 2.0", "Crypto-JS", "FastAPI", "Python", "PostgreSQL", "Supabase", "SQLAlchemy", "Pydantic", "Docker", "GitHub Actions"],
+    github: "https://github.com/Mozart299/compatibility-matrix",
+    liveUrl: "https://compatibility-matrix.vercel.app",
+    featured: true,
+  },
+  {
+    id: "bnpl",
+    name: "BNPL Platform",
+    description: "A comprehensive Buy Now Pay Later fintech platform with multi-role dashboards for admins, agents, merchants, companies, and employees. Features AI-powered credit scoring, real-time fraud detection, float management, payroll deduction integration, and automated compliance reporting.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Redis", "JWT", "Zod"],
+    github: "https://github.com/Mozart299/bnpl-frontend",
+    featured: true,
+  },
+  {
+    id: "mini-deploy",
+    name: "MiniDeploy",
+    description: "A mini deployment platform that takes a Git repo URL and returns a live URL with real-time build log streaming. Automatically clones the repo, builds a Docker image via Railpack (no Dockerfile needed), spins up a container, and registers a subdomain route through Caddy — all streamed to the browser via Server-Sent Events.",
+    technologies: ["React", "TypeScript", "Vite", "TanStack Router", "TanStack Query", "Node.js", "Express", "Docker", "Railpack", "Caddy", "SSE"],
+    github: "https://github.com/Mozart299/mini-deploy",
+  },
+  {
+    id: "fleet-analytics-pipeline",
+    name: "Fleet Analytics Data Pipeline",
+    description: "A real-time data pipeline that ingests and processes vehicle fleet telemetry data including GPS, fuel consumption, and driver behavior metrics. Built to demonstrate data engineering skills with stream processing, storage optimization, and business analytics dashboards for transportation businesses.",
+    technologies: ["Apache Kafka", "Python", "FastAPI", "Apache Spark", "PostgreSQL", "TimescaleDB", "Redis"],
+  },
+  // Tier 2 — Full-stack apps with real users
+  {
+    id: "triptrack",
+    name: "TripTrack",
+    description: "A mobile-first trip tracking and expense management application for managing journeys, activities, and splitting costs among participants. Features journey planning, activity timeline tracking, and automatic expense splitting with real-time updates.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Nx"],
+    github: "https://github.com/Mozart299/triptrack",
+    liveUrl: "https://www.triptrack.xyz",
+  },
   {
     id: "bill-splitter",
     name: "It's Happy Hour Somewhere",
@@ -18,13 +58,20 @@ export const projects: Project[] = [
     liveUrl: "https://its-happy-hour-somewhere.vercel.app/",
   },
   {
-    id: "triptrack",
-    name: "TripTrack",
-    description: "A mobile-first trip tracking and expense management application for managing journeys, activities, and splitting costs among participants. Features journey planning, activity timeline tracking, and automatic expense splitting with real-time updates.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Nx"],
-    github: "https://github.com/Mozart299/triptrack",
-    liveUrl: "https://www.triptrack.xyz",
+    id: "invoiceug",
+    name: "InvoiceUG",
+    description: "A web app for Ugandan businesses to upload, parse, and validate URA (Uganda Revenue Authority) invoices. Supports PDF upload and QR code scanning to extract invoice data, check tax credit eligibility, and track claimable VAT amounts. Features tiered access plans (Free/Pro/Enterprise).",
+    technologies: ["Next.js", "React", "TypeScript", "Supabase", "pdfjs-dist", "Tailwind CSS"],
+    github: "https://github.com/Mozart299/invoiceug",
   },
+  {
+    id: "dukari",
+    name: "Dukari",
+    description: "A multi-vendor e-commerce marketplace built for Ugandan businesses, featuring vendor storefronts, product management, order processing, and payment integration.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Redis"],
+    github: "https://github.com/Mozart299/dukari-frontend",
+  },
+  // Tier 3 — Client / production sites
   {
     id: "nambi-notes",
     name: "Nambi Notes Publishing House",
@@ -49,14 +96,34 @@ export const projects: Project[] = [
     github: "https://github.com/Mozart299/the-one-percent-standard",
     liveUrl: "https://www.theonepercentstandard.com",
   },
-
-    {
-    id: "compatibility-matrix",
-    name: "Compatibility Matrix",
-    description: "A modern web application for discovering deeper connections through advanced compatibility analysis. Analyzes multiple dimensions of personality, values, and communication styles with biometric integration (HRV) to help users build stronger relationships.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Radix UI", "TanStack React Query", "Axios", "Recharts", "OAuth 2.0", "Crypto-JS", "FastAPI", "Python", "PostgreSQL", "Supabase", "SQLAlchemy", "Pydantic", "Docker", "GitHub Actions"],
-    github: "https://github.com/Mozart299/compatibility-matrix",
-    liveUrl: "https://compatibility-matrix.vercel.app",
+  {
+    id: "sunrise",
+    name: "SUNRISE Project Website",
+    description: "A content-managed website for the SUNRISE university consortium — a multi-institutional research and education initiative spanning African and European partner universities including Makerere, Kyambogo, and Strathmore. Features dynamic content via Sanity CMS, partner showcasing, and contact functionality.",
+    technologies: ["Next.js", "React", "TypeScript", "Sanity CMS", "Tailwind CSS", "Resend"],
+    github: "https://github.com/Mozart299/sunrise",
+  },
+  // Tier 4 — Prototypes / work in progress
+  {
+    id: "playlistpulse",
+    name: "PlaylistPulse",
+    description: "A social music platform for discovering and sharing playlists. Features user profiles, collaborative playlist management, a personalized dashboard with trending content, and real-time messaging.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MongoDB", "NextAuth", "Radix UI"],
+    github: "https://github.com/Mozart299/playlistpulse-frontend",
+  },
+  {
+    id: "wanderlust",
+    name: "Wanderlust",
+    description: "An Africa-focused travel guide with an interactive world map, curated destination profiles, hidden gems, and trip journals. Users can click map pins to explore destinations across the continent.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MapLibre GL"],
+    github: "https://github.com/Mozart299/wanderlust",
+  },
+  {
+    id: "jk-gold-souk",
+    name: "JK Gold Souk",
+    description: "An e-commerce platform for investment-grade gold — bars, coins, and bullion. Features a product catalog, live gold price tracking, and contact functionality with a focus on transparency and trust.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/Mozart299/jk-gold-souk",
   },
   {
     id: "radiant-smile-foundation",
@@ -65,13 +132,6 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "shadcn/ui", "Framer Motion", "TypeScript"],
     github: "https://github.com/Mozart299/rsf-website",
     liveUrl: "https://radiant-smile-foundation.vercel.app",
-  },
-    {
-    id: "sample-dev-portfolio-site",
-    name: "Neon Portfolio",
-    description: "A sample developer portfolio site",
-    technologies: ["Webflow", "Webflow Cloud"],
-    liveUrl: "https://mozart-8368c3.webflow.io/neon-portfolio",
   },
 ];
 
