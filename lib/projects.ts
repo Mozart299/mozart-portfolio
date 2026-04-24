@@ -137,9 +137,9 @@ export const projects: Project[] = [
 
 export const name = "Ssendegeya Kyeyune Peter";
 
-export const about = `Hi! I'm a software developer with a passion for solving problems.
+export const about = `Software engineer based in Uganda. I like hard problems — from fintech systems to data pipelines to deployment tooling. Speak English and some German (B1/B2). Open to remote roles globally.
 
-I have experience with:
+Skills:
 - Frontend: HTML5, CSS3, Next.js, TypeScript, Tailwind CSS, Bootstrap
 - Backend: Node.js, Express, Python (FastAPI), Strapi, Symfony
 - Databases: MySQL, MongoDB, PostgreSQL, Supabase
@@ -148,9 +148,7 @@ I have experience with:
 - Cloud: Google Cloud Platform
 - Automation & Workflows: N8n
 - No-Code Platforms: Webflow, Webflow Cloud
-- Deployment: Render, Vercel, App Store, Google Play Store
-
-I love working on projects that combine great UX with solid engineering practices.`;
+- Deployment: Render, Vercel, App Store, Google Play Store`;
 
 export interface Experience {
   company: string;
