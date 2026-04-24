@@ -140,11 +140,13 @@ export const name = "Ssendegeya Kyeyune Peter";
 export const about = `Software engineer based in Uganda. I like hard problems — from fintech systems to data pipelines to deployment tooling. Speak English and some German (B1/B2). Open to remote roles globally.
 
 Skills:
-- Frontend: HTML5, CSS3, Next.js, TypeScript, Tailwind CSS, Bootstrap
-- Backend: Node.js, Express, Python (FastAPI), Strapi, Symfony
-- Databases: MySQL, MongoDB, PostgreSQL, Supabase
+- Frontend: HTML5, CSS3, Next.js, TypeScript, Tailwind CSS, Bootstrap, Vite, Framer Motion, Radix UI, TanStack Query
+- Backend: Node.js, Express, Python (FastAPI), Strapi, Symfony, Sanity CMS, Zod
+- Databases: MySQL, MongoDB, PostgreSQL, Supabase, Redis, TimescaleDB
+- Data Engineering: Apache Kafka, Apache Spark
 - UI/UX Design: Adobe XD, Figma
 - Mobile Development: Flutter, Firebase
+- DevOps: Docker, GitHub Actions
 - Cloud: Google Cloud Platform
 - Automation & Workflows: N8n
 - No-Code Platforms: Webflow, Webflow Cloud
