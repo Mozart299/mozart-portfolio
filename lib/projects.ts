@@ -137,7 +137,7 @@ export const projects: Project[] = [
 
 export const name = "Ssendegeya Kyeyune Peter";
 
-export const about = `Hi! I'm a software developer with a passion for solving probblems.
+export const about = `Hi! I'm a software developer with a passion for solving problems.
 
 I have experience with:
 - Frontend: HTML5, CSS3, Next.js, TypeScript, Tailwind CSS, Bootstrap
@@ -151,6 +151,30 @@ I have experience with:
 - Deployment: Render, Vercel, App Store, Google Play Store
 
 I love working on projects that combine great UX with solid engineering practices.`;
+
+export interface Experience {
+  company: string;
+  role: string;
+  type: string;
+  period: string;
+  bullets: string[];
+}
+
+export const experience: Experience[] = [
+  {
+    company: "AirQo",
+    role: "Frontend Software Engineer",
+    type: "Full-Time",
+    period: "Nov 2024 – Present",
+    bullets: [
+      "Develop and maintain the AirQo Mobile Application (Flutter), translating Figma designs into production code and integrating REST APIs for real-time air quality data across African cities.",
+      "Write comprehensive unit tests and contribute to QA processes — systematically validating app behavior, catching regressions, and documenting test outcomes with precision.",
+      "Author and maintain technical documentation for internal workflows, onboarding materials, and CI/CD pipeline processes.",
+      "Implement automated deployment workflows using GitHub Actions for Google Play Store releases, with documented release notes and changelogs.",
+      "Debug cross-platform issues in Linux-based environments (Ubuntu) and provide clear written diagnoses for engineering team reviews.",
+    ],
+  },
+];
 
 export const certifications = [
   {

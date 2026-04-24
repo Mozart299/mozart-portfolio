@@ -1,4 +1,4 @@
-import { projects, about, contact, name, certifications } from "./projects";
+import { projects, about, contact, name, certifications, experience } from "./projects";
 
 export interface TerminalOutput {
   id: string;
@@ -16,6 +16,7 @@ export const commands: Record<string, CommandHandler> = {
   ls                - List all projects
   cat <project>     - View project details
   about             - View about section
+  experience        - View work experience
   contact           - View contact information
   github <project>  - Open GitHub repo for a project
   clear             - Clear terminal
@@ -62,6 +63,15 @@ Usage: Type a command and press Enter`;
       .map((cert) => `\n${cert.title}\n  Issuer: ${cert.issuer}\n  Credential: ${cert.credentialUrl}`)
       .join("\n");
     return `${about}\n\nCertifications:${certificationsText}`;
+  },
+
+  experience: () => {
+    return experience
+      .map((job) => {
+        const bullets = job.bullets.map((b) => `  • ${b}`).join("\n");
+        return `${job.company} — ${job.role} (${job.type})\n${job.period}\n\n${bullets}`;
+      })
+      .join("\n\n---\n\n");
   },
 
   contact: () => {

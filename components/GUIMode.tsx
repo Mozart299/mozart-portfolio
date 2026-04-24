@@ -1,10 +1,10 @@
 "use client";
 
-import { projects, about, contact, name, certifications } from "@/lib/projects";
+import { projects, about, contact, name, certifications, experience } from "@/lib/projects";
 import { useState } from "react";
 import Link from "next/link";
 
-type Section = "home" | "projects" | "about" | "contact";
+type Section = "home" | "projects" | "experience" | "about" | "contact";
 
 export function GUIMode() {
   const [activeSection, setActiveSection] = useState<Section>("home");
@@ -36,6 +36,12 @@ export function GUIMode() {
             className={`px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm ${activeSection === "projects" ? "bg-green-400 text-black" : "hover:text-cyan-400"}`}
           >
             projects
+          </button>
+          <button
+            onClick={() => setActiveSection("experience")}
+            className={`px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm ${activeSection === "experience" ? "bg-green-400 text-black" : "hover:text-cyan-400"}`}
+          >
+            experience
           </button>
           <button
             onClick={() => setActiveSection("about")}
@@ -149,6 +155,29 @@ export function GUIMode() {
                   </Link>
                 </div>
               )}
+            </div>
+          </div>
+        )}
+
+        {activeSection === "experience" && (
+          <div className="space-y-4">
+            <div className="text-cyan-400 text-sm sm:text-base">$ cat experience.txt</div>
+            <div className="ml-2 sm:ml-4 space-y-6">
+              {experience.map((job, index) => (
+                <div key={index} className="border-l-2 border-green-400 pl-4 space-y-2">
+                  <div className="text-green-400 font-semibold text-sm sm:text-base">{job.company}</div>
+                  <div className="text-cyan-400 text-xs sm:text-sm">{job.role} · {job.type}</div>
+                  <div className="text-gray-500 text-xs sm:text-sm">{job.period}</div>
+                  <ul className="mt-2 space-y-2">
+                    {job.bullets.map((bullet, i) => (
+                      <li key={i} className="text-green-400 text-xs sm:text-sm flex gap-2">
+                        <span className="text-cyan-400 shrink-0">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         )}
