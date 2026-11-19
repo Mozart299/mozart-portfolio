@@ -60,7 +60,7 @@ export default function AboutPage() {
               <InlineWork id="musiconthefarm">a music school</InlineWork>,{" "}
               <InlineWork id="sunrise">a university partnership</InlineWork>,{" "}
               <InlineWork id="radiant-smile-foundation">a charity</InlineWork> and{" "}
-              <InlineWork id="jk-gold-souk">a gold dealer&apos;s online shop</InlineWork>.
+              <InlineWork id="jk-gold-souk">an online shop for gold bars and coins</InlineWork>.
             </p>
             <p>
               I was previously a Mobile App Engineer at AirQo, building their mobile app that shows live air quality

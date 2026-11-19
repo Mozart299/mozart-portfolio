@@ -109,7 +109,7 @@ export default function Home() {
             <InlineWork id="nambi-notes">a publishing house</InlineWork>,{" "}
             <InlineWork id="musiconthefarm">a music and arts school</InlineWork>,{" "}
             <InlineWork id="radiant-smile-foundation">a charity</InlineWork> and{" "}
-            <InlineWork id="jk-gold-souk">a gold dealer&apos;s online shop</InlineWork>.
+            <InlineWork id="jk-gold-souk">an online shop for gold bars and coins</InlineWork>.
           </p>
           <p className="md:col-start-2 -mt-1 flex items-baseline gap-3">
             <span className="h-px w-8 bg-warm self-center" aria-hidden />
