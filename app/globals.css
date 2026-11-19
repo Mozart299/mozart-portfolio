@@ -136,3 +136,42 @@ body {
     }
   }
 }
+
+.intro-ink {
+  position: relative;
+  display: inline-block;
+}
+
+.intro-ink::after {
+  content: "";
+  position: absolute;
+  inset: auto -2% -0.07em 1%;
+  height: 0.1em;
+  border-bottom: 0.045em solid var(--warm-light);
+  border-radius: 50%;
+  transform: rotate(-4deg);
+  transform-origin: left center;
+}
+
+@keyframes ink-stroke {
+  from { transform: rotate(-4deg) scaleX(0); }
+  to { transform: rotate(-4deg) scaleX(1); }
+}
+
+@keyframes place-print {
+  from { transform: translateY(1.5rem) rotate(-5deg); opacity: 0.3; }
+  to { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .intro-ink::after {
+    animation: ink-stroke 650ms ease-out both;
+  }
+
+  .hero-prints > div {
+    animation: place-print 540ms cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
+  }
+
+  .hero-prints > div:nth-child(2) { animation-delay: 90ms; }
+  .hero-prints > div:nth-child(3) { animation-delay: 180ms; }
+}

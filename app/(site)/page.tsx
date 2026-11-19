@@ -22,13 +22,13 @@ export default function Home() {
             <div>
               <p className="inline-flex items-center gap-2.5 font-mono text-[13px] uppercase tracking-[0.12em] text-cream/75">
                 <span className="relative flex w-2 h-2">
-                  <span className="absolute inset-0 rounded-full bg-warm-light animate-ping opacity-70" />
+                  <span className="absolute inset-0 rounded-full bg-warm-light motion-safe:animate-ping opacity-70" />
                   <span className="relative w-2 h-2 rounded-full bg-warm-light" />
                 </span>
                 Available for new projects
               </p>
               <h1 className="mt-7 font-display text-[3.4rem] leading-[0.98] sm:text-7xl lg:text-[5.6rem] tracking-tight">
-                Websites &amp; apps people <em className="text-warm-light">love</em> to use.
+                Websites &amp; apps people <em className="intro-ink text-warm-light">love</em> to use.
               </h1>
               <p className="mt-7 text-lg sm:text-xl text-cream/75 max-w-xl leading-relaxed">
                 I&apos;m Peter Ssendegeya, a software engineer in Uganda. I build websites and apps for businesses,
@@ -60,7 +60,7 @@ export default function Home() {
                 </p>
               </div>
             ) : (
-              <div className="relative hidden sm:block h-[420px] lg:h-[480px]" aria-hidden>
+              <div className="hero-prints relative hidden sm:block h-[420px] lg:h-[480px]">
                 <div className="absolute right-[4%] top-0 w-[58%] rotate-[5deg]">
                   <Print project={byId("sunrise")} n={4} sizes="300px" priority />
                 </div>
