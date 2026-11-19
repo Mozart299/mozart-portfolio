@@ -1,0 +1,11 @@
+@keyframes writeLetter {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stroke {
+    stroke-dasharray: 1;
+    animation: writeLetter var(--pen-duration) ease-in-out var(--pen-delay) both;
+  }
+}

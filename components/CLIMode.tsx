@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { TerminalOutput as TerminalOutputType, executeCommand } from "@/lib/cli";
 import { TerminalOutput } from "./TerminalOutput";
 import { TerminalInput } from "./TerminalInput";
@@ -46,7 +46,7 @@ export function CLIMode() {
       {/* Welcome Message */}
       <div className="p-2 sm:p-4 font-mono text-xs sm:text-sm text-green-400 border-b border-gray-700 flex-shrink-0">
         Welcome to Mozart Portfolio Terminal<br />
-        Type 'help' for available commands
+        Type &apos;help&apos; for available commands
       </div>
 
       {/* Scrollable Output Area */}

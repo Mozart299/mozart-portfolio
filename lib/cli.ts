@@ -1,4 +1,4 @@
-import { projects, about, contact, name, certifications, experience } from "./projects";
+import { projects, about, contact, name, certifications } from "./projects";
 
 export interface TerminalOutput {
   id: string;
@@ -16,9 +16,7 @@ export const commands: Record<string, CommandHandler> = {
   ls                - List all projects
   cat <project>     - View project details
   about             - View about section
-  experience        - View work experience
   contact           - View contact information
-  github <project>  - Open GitHub repo for a project
   clear             - Clear terminal
   whoami            - Show current user
 
@@ -47,9 +45,6 @@ Usage: Type a command and press Enter`;
     output += `Description: ${project.description}\n`;
     output += `Technologies: ${project.technologies.join(", ")}\n`;
 
-    if (project.github) {
-      output += `GitHub: ${project.github}\n`;
-    }
 
     if (project.liveUrl) {
       output += `Live URL: ${project.liveUrl}\n`;
@@ -65,31 +60,8 @@ Usage: Type a command and press Enter`;
     return `${about}\n\nCertifications:${certificationsText}`;
   },
 
-  experience: () => {
-    return experience
-      .map((job) => {
-        const bullets = job.bullets.map((b) => `  • ${b}`).join("\n");
-        return `${job.company} — ${job.role} (${job.type})\n${job.period}\n\n${bullets}`;
-      })
-      .join("\n\n---\n\n");
-  },
-
   contact: () => {
-    return `Contact Information:\n\nEmail: ${contact.email}\nPhone: ${contact.phone}\nGitHub: ${contact.github}\nLinkedIn: ${contact.linkedin}`;
-  },
-
-  github: (args: string[]) => {
-    if (!args[0]) {
-      return `Error: Please specify a project. Use 'ls' to see available projects.`;
-    }
-
-    const project = projects.find((p) => p.id === args[0].toLowerCase());
-
-    if (!project || !project.github) {
-      return `Error: Project '${args[0]}' not found or has no GitHub repo.`;
-    }
-
-    return `Opening ${project.github}...\n(In a real environment, this would open the link)`;
+    return `Contact Information:\n\nEmail: ${contact.email}\nPhone: ${contact.phone}\nLinkedIn: ${contact.linkedin}`;
   },
 
   clear: () => {
