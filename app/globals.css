@@ -1,48 +1,138 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #22c55e;
+  /* 60%: creams */
+  --paper: #f6f1e7; /* page background, and text on green */
+  --paper-alt: #ece4d4; /* alternate bands */
+  --card: #fdfaf3; /* cards and photo prints */
+  --ink: #17140f;
+  --muted: #575046;
+  --line: #e0d6c4;
+  /* 30%: greens */
+  --forest: #143626; /* deep colour blocks */
+  --accent: #1f5f3f; /* buttons and links */
+  --accent-dark: #164a30;
+  --accent-soft: #dbe8dc;
+  --mint: #a8d8b8; /* highlights on green */
+  /* 10%: terracotta spark */
+  --warm: #a3461f; /* on cream */
+  --warm-light: #f0a27a; /* on green */
+  --cream: var(--paper);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-paper-alt: var(--paper-alt);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-soft: var(--accent-soft);
+  --color-warm: var(--warm);
+  --color-warm-light: var(--warm-light);
+  --color-mint: var(--mint);
+  --color-forest: var(--forest);
+  --color-cream: var(--cream);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-mono), monospace;
-  height: 100%;
-  width: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   margin: 0;
-  padding: 0;
-  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-#__next {
-  height: 100%;
-  width: 100%;
+::selection {
+  background: var(--accent-soft);
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #22c55e;
-  border-radius: 4px;
+/* Paper-grain texture for deep colour blocks */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #16a34a;
+/* Project prints spread out from the centre as the collage scrolls into view */
+@keyframes spread {
+  from {
+    transform: translate(var(--dx), var(--dy)) rotate(0deg) scale(0.85);
+  }
+  to {
+    transform: translate(0, 0) rotate(var(--r)) scale(1);
+  }
+}
+.collage-print {
+  transform: rotate(var(--r));
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .collage {
+      view-timeline-name: --collage;
+    }
+    .collage-print {
+      animation: spread linear both;
+      animation-timeline: --collage;
+      animation-range: entry 20% contain 25%;
+    }
+  }
+}
+
+/* Process steps light up one by one as they reach the middle of the screen (computers only) */
+@keyframes light-up {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+    .light-up {
+      animation: light-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 45%;
+    }
+  }
 }
