@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import WelcomeGreeting from "@/components/WelcomeGreeting";
+import { WelcomeIntro } from "@/components/WelcomeIntro";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -8,7 +10,7 @@ const geistSans = Geist({
 });
 
 const display = Instrument_Serif({
-  variable: "--font-display",
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
@@ -34,6 +36,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${display.variable} antialiased`}
       >
+        <WelcomeIntro>
+          <WelcomeGreeting />
+        </WelcomeIntro>
         {children}
       </body>
     </html>

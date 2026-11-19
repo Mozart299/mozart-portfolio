@@ -6,8 +6,6 @@ import { Print } from "@/components/Print";
 import { ProcessList } from "@/components/ProcessList";
 import { Label, SectionHead } from "@/components/SectionHead";
 import { UgandaClock } from "@/components/UgandaClock";
-import WelcomeGreeting from "@/components/WelcomeGreeting";
-import { WelcomeIntro } from "@/components/WelcomeIntro";
 import { WorkCollage } from "@/components/WorkCollage";
 import { projects } from "@/lib/projects";
 import { photo, services } from "@/lib/site";
@@ -17,7 +15,6 @@ const byId = (id: string) => projects.find((p) => p.id === id) ?? projects[0];
 export default function Home() {
   return (
     <>
-      <WelcomeIntro><WelcomeGreeting /></WelcomeIntro>
       {/* Hero */}
       <section className="grain bg-forest text-cream">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-32 sm:pt-40 pb-10 min-h-[92svh] flex flex-col">
