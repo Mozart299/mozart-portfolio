@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CopyButton } from "./CopyButton";
 import { Label } from "./SectionHead";
 import { UgandaClock } from "./UgandaClock";
-import { contact, name, projects } from "@/lib/projects";
+import { contact, name } from "@/lib/projects";
 import { emailHref, nav, phoneHref, phoneLabel, whatsappHref } from "@/lib/site";
 
 export function Footer() {
@@ -14,7 +13,6 @@ export function Footer() {
 
   return (
     <footer className="grain bg-forest text-cream">
-      <PrintStrip />
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {!onContactPage && (
           <div className="pt-32 lg:pt-44 pb-20 grid gap-6 md:grid-cols-[220px_1fr] md:gap-10">
@@ -96,37 +94,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-/* Small project prints sitting on the top edge of the footer, half in the cream and half in the green. */
-const tilt = [
-  "-rotate-6 translate-y-2",
-  "rotate-3",
-  "-rotate-2 translate-y-3",
-  "rotate-6",
-  "-rotate-3 translate-y-1",
-  "rotate-2 translate-y-3",
-  "-rotate-5",
-];
-const showFrom = ["", "", "", "hidden sm:block", "hidden md:block", "hidden lg:block", "hidden xl:block"];
-
-function PrintStrip() {
-  return (
-    <div
-      className="pointer-events-none absolute inset-x-0 -top-12 sm:-top-16 flex justify-center gap-3 sm:gap-5 px-4"
-      aria-hidden
-    >
-      {projects.slice(0, tilt.length).map((p, i) => (
-        <div
-          key={p.id}
-          className={`${showFrom[i]} ${tilt[i]} bg-card p-1.5 pb-4 shadow-[0_16px_30px_-14px_rgba(0,0,0,0.55)]`}
-        >
-          <div className="relative w-24 sm:w-32 lg:w-36 aspect-[4/3] overflow-hidden">
-            <Image src={p.image} alt="" fill sizes="144px" className="object-cover object-left-top" />
-          </div>
-        </div>
-      ))}
-    </div>
   );
 }
