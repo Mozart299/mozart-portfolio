@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import WelcomeGreeting from "@/components/WelcomeGreeting";
 import { WelcomeIntro } from "@/components/WelcomeIntro";
+import { pageMetadata, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,8 +23,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Peter Ssendegeya | Websites & Apps",
-  description: "Software engineer in Uganda building websites, apps and online payment systems for businesses, schools and charities.",
+  metadataBase: siteUrl,
+  ...pageMetadata({
+    title: "Peter Ssendegeya | Software Engineer",
+    description: "Software engineer in Uganda building web and mobile apps, payment systems, developer tools and distributed systems.",
+    path: "/",
+  }),
 };
 
 export default function RootLayout({

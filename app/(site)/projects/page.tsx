@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { PageHero } from "@/components/PageHero";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Projects | Peter Ssendegeya",
-  description:
-    "Websites and apps built for publishers, schools, universities, charities and businesses. Every one is live to try.",
-};
+  description: "Websites and apps built for publishers, schools, universities, charities and businesses. Every one is live to try.",
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (

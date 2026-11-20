@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { CopyButton } from "@/components/CopyButton";
 import { PageHero } from "@/components/PageHero";
 import { contact } from "@/lib/projects";
 import { emailHref, phoneHref, phoneLabel, whatsappHref } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact | Peter Ssendegeya",
   description: "Get in touch about a website or app by WhatsApp, email or phone.",
-};
+  path: "/contact",
+});
 
 const tips = [
   "What your business or organisation does",

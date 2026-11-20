@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { InlineWork } from "@/components/InlineWork";
 import { PageHero } from "@/components/PageHero";
 import { about, certifications, name } from "@/lib/projects";
 import { photo } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About | Peter Ssendegeya",
   description: "Software engineer in Uganda building websites and apps for businesses, schools and charities.",
-};
+  path: "/about",
+});
 
 const skills =
   about

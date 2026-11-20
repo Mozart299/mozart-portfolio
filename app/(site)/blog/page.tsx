@@ -1,11 +1,14 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { articles } from "@/lib/articles";
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Engineering notes | Peter Ssendegeya",
   description: "Technical case studies from Peter Ssendegeya’s software projects, with worked examples and links to the code.",
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

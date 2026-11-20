@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { articles } from "@/lib/articles";
+import { pageMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,7 +19,12 @@ async function getArticle(params: Props["params"]) {
 
 export async function generateMetadata({ params }: Props) {
   const article = await getArticle(params);
-  return { title: `${article.title} | Peter Ssendegeya`, description: article.summary };
+  return pageMetadata({
+    title: `${article.title} | Peter Ssendegeya`,
+    description: article.summary,
+    path: `/blog/${article.slug}`,
+    type: "article",
+  });
 }
 
 export default async function ArticlePage({ params }: Props) {

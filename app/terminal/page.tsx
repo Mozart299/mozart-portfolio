@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { CLIMode } from "@/components/CLIMode";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Terminal | Peter Ssendegeya",
   description: "Explore Peter's portfolio from a command line. Type 'help' to start.",
-};
+  path: "/terminal",
+});
 
 export default function TerminalPage() {
   return (

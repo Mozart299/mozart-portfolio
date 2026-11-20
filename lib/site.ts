@@ -1,7 +1,7 @@
 import { contact } from "./projects";
 
 /** Put a photo in /public (e.g. /public/me.jpg) and set this to "/me.jpg" to show it on the About page. */
-export const photo: string | undefined = undefined;
+export const photo: string | undefined = "/me.jpg";
 
 const greeting = "Hi Peter, I'd like to talk about a project.";
 

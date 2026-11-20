@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Icon } from "@/components/Icon";
 import { PageHero } from "@/components/PageHero";
 import { Label, SectionHead } from "@/components/SectionHead";
@@ -6,10 +7,11 @@ import { projects } from "@/lib/projects";
 import { ProcessList } from "@/components/ProcessList";
 import { faqs, services } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Services | Peter Ssendegeya",
   description: "Websites, web and mobile apps, online payments and automation for businesses, schools and charities.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
