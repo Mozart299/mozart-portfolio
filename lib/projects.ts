@@ -39,7 +39,7 @@ export const projects: Project[] = [
     name: "Nambi Notes Publishing House",
     category: "Website",
     client: "Nambi Notes Publishing House",
-    summary: "Website for a publishing house. Visitors can browse books, meet the authors, pitch their own book and buy online with PayPal.",
+    summary: "Readers discover authors and buy their books with PayPal. Writers can pitch a manuscript directly to the publisher.",
     highlights: [
       "Book catalogue and author profiles",
       "Online book sales with PayPal checkout",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     name: "Kitty Town Music & Arts School",
     category: "Website",
     client: "Kitty Town Music & Arts School",
-    summary: "Website for a music and arts school in Uganda offering music, dance and art lessons, with scholarships for children who need them.",
+    summary: "Families can explore music, dance and art lessons, learn about scholarships and enquire directly with the school.",
     highlights: [
       "Shows lessons in music, dance and visual art",
       "Explains the scholarship programme for children who need support",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     name: "SUNRISE Project Website",
     category: "Website",
     client: "SUNRISE university partnership",
-    summary: "Website for a partnership of African and European universities, including Makerere and Strathmore. The team updates the content themselves, no developer needed.",
+    summary: "A shared home for solar research across African and European universities. Staff publish news and update project pages themselves.",
     highlights: [
       "Brings partner universities in Africa and Europe together in one place",
       "Staff update news and pages themselves, no developer needed",

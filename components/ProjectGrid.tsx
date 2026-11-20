@@ -1,39 +1,33 @@
-"use client";
-
-import { useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import { projects } from "@/lib/projects";
 
-const LABELS = { Website: "Websites", App: "Apps", "Business tool": "Business tools", "Online store": "Online stores" } as const;
-type Filter = "All" | keyof typeof LABELS;
+const spotlights = [
+  { id: "sunrise", action: "Explore SUNRISE" },
+  { id: "nambi-notes", action: "Browse the books", path: "/books" },
+];
 
 export function ProjectGrid() {
-  const [filter, setFilter] = useState<Filter>("All");
-  const filters: Filter[] = ["All", ...(Object.keys(LABELS) as (keyof typeof LABELS)[]).filter((c) => projects.some((p) => p.category === c))];
-  const shown = filter === "All" ? projects : projects.filter((p) => p.category === filter);
+  const otherProjects = projects.filter((project) => !spotlights.some(({ id }) => id === project.id));
 
   return (
     <>
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Show projects by type">
-        {filters.map((f) => (
-          <button
-            key={f}
-            type="button"
-            onClick={() => setFilter(f)}
-            aria-pressed={filter === f}
-            className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
-              filter === f ? "bg-ink text-paper border-ink" : "bg-card text-ink border-line hover:border-ink"
-            }`}
-          >
-            {f === "All" ? `All projects (${projects.length})` : LABELS[f]}
-          </button>
-        ))}
-      </div>
-      <div className="mt-10 grid gap-8 md:grid-cols-2">
-        {shown.map((p) => (
-          <ProjectCard key={p.id} project={p} />
-        ))}
-      </div>
+      <section className="grain bg-forest text-cream">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-32 pb-12 sm:pb-16">
+          <h1 className="font-display text-5xl sm:text-7xl tracking-tight">Selected projects</h1>
+          <div className="mt-6 sm:mt-10 grid gap-10 md:grid-cols-2 md:gap-8">
+            {spotlights.map(({ id, action, path }) => {
+              const project = projects.find((p) => p.id === id);
+              return project && <ProjectCard key={id} project={project} action={action} path={path} />;
+            })}
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-5 sm:px-8 py-12 sm:py-20">
+        <h2 className="mb-6 sm:mb-10 font-display text-4xl sm:text-5xl">More projects</h2>
+        <div className="divide-y divide-line border-y border-line">
+          {otherProjects.map((project) => <ProjectCard key={project.id} project={project} />)}
+        </div>
+      </section>
     </>
   );
 }

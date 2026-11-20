@@ -1,57 +1,43 @@
-import { BrowserFrame } from "./BrowserFrame";
-import { Icon } from "./Icon";
-import { btn } from "@/lib/site";
+import Image from "next/image";
 import type { Project } from "@/lib/projects";
 
-/** Card used in the projects grid */
-export function ProjectCard({ project: p }: { project: Project }) {
+export function ProjectCard({ project, action, path }: { project: Project; action?: string; path?: string }) {
+  const featured = Boolean(action);
+  const Heading = featured ? "h2" : "h3";
+  const href = project.liveUrl && (path ? new URL(path, project.liveUrl).href : project.liveUrl);
+  const preview = (
+    <Image
+      src={project.image}
+      alt={`Screenshot of ${project.name}`}
+      fill
+      sizes={featured ? "(min-width: 1200px) 528px, (min-width: 768px) 46vw, 100vw" : "(min-width: 640px) 210px, 96px"}
+      loading={featured ? "eager" : "lazy"}
+      className="object-cover object-top"
+    />
+  );
+  const imageClass = featured
+    ? "relative block aspect-[16/9] overflow-hidden rounded-lg border border-cream/20"
+    : "relative block aspect-[4/3] overflow-hidden rounded-md border border-line";
+
   return (
-    <article className="flex flex-col rounded-2xl bg-card border border-line overflow-hidden hover:shadow-[0_20px_50px_-24px_rgba(23,20,15,0.35)] transition-shadow">
-      <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="block group p-3 pb-0" aria-label={`Visit the ${p.name} website`}>
-        <BrowserFrame
-          src={p.image}
-          alt={`Screenshot of ${p.name}`}
-          url={p.liveUrl}
-          sizes="(min-width: 1024px) 560px, 100vw"
-          className="shadow-none transition-transform duration-500 group-hover:-translate-y-1"
-        />
-      </a>
-      <div className="flex flex-col flex-1 p-6 sm:p-7">
-        <p className="text-xs uppercase tracking-[0.14em] text-muted">
-          {p.category}
-          {p.client && <> · Built for {p.client}</>}
-        </p>
-        <h3 className="mt-3 font-display text-3xl sm:text-4xl text-ink leading-tight">{p.name}</h3>
-        <p className="mt-3 text-muted leading-relaxed">{p.summary}</p>
-        <Highlights items={p.highlights} />
-        <div className="mt-auto pt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-          {p.liveUrl && (
-            <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className={btn.primary}>
-              Visit site <span aria-hidden>↗</span>
-            </a>
-          )}
-          <details className="text-sm text-muted w-full sm:w-auto">
-            <summary className="cursor-pointer hover:text-ink">Technical details</summary>
-            <p className="mt-3 leading-relaxed">{p.description}</p>
-            <p className="mt-2 text-xs">Built with {p.technologies.join(", ")}</p>
+    <article className={featured ? "flex flex-col" : "grid grid-cols-[6rem_1fr] sm:grid-cols-[13rem_1fr] gap-4 sm:gap-8 items-start py-6 sm:py-8"}>
+      {project.liveUrl ? (
+        <a href={project.liveUrl} className={imageClass} aria-label={`Visit ${project.name}`} target="_blank" rel="noopener noreferrer">{preview}</a>
+      ) : <div className={imageClass}>{preview}</div>}
+      <div className={featured ? "mt-5 flex flex-1 flex-col" : "min-w-0"}>
+        <Heading className={`font-display leading-tight ${featured ? "text-4xl sm:text-5xl" : "text-2xl sm:text-3xl"}`}>{project.name}</Heading>
+        <p className={`mt-2 max-w-2xl leading-relaxed ${featured ? "text-cream/85" : "text-muted"}`}>{project.summary}</p>
+        <div className={`flex flex-wrap items-baseline gap-x-5 gap-y-2 ${featured ? "mt-auto pt-5" : "mt-3"}`}>
+          {href && <a href={href} target="_blank" rel="noopener noreferrer" aria-label={action ?? `Visit ${project.name}`} className={`font-medium underline underline-offset-4 ${featured ? "text-mint" : "text-accent"}`}>
+            {action ?? "Visit site"} <span aria-hidden>↗</span>
+          </a>}
+          <details className={`text-sm open:basis-full ${featured ? "text-cream/80" : "text-muted"}`}>
+            <summary className="cursor-pointer">Technical details</summary>
+            <p className="mt-2 max-w-prose leading-relaxed">{project.description}</p>
+            <p className="mt-2">Built with {project.technologies.join(", ")}</p>
           </details>
         </div>
       </div>
     </article>
-  );
-}
-
-function Highlights({ items }: { items: string[] }) {
-  return (
-    <ul className="mt-6 space-y-3 text-[15px]">
-      {items.map((h) => (
-        <li key={h} className="flex gap-3 text-ink">
-          <span className="mt-0.5 w-5 h-5 shrink-0 rounded-full bg-accent-soft text-accent flex items-center justify-center">
-            <Icon name="check" className="w-3.5 h-3.5" />
-          </span>
-          {h}
-        </li>
-      ))}
-    </ul>
   );
 }
