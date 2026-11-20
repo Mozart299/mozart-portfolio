@@ -39,7 +39,7 @@ function Intro() {
 export function WorkCollage() {
   const items = projects.slice(0, spots.length);
   return (
-    <section className="collage max-w-6xl mx-auto px-4 sm:px-6 py-24 lg:py-36">
+    <section id="work" className="collage max-w-6xl mx-auto px-4 sm:px-6 py-24 lg:py-36">
       {/* Phones and small tablets: a tidy grid of prints */}
       <div className="md:hidden">
         <Intro />

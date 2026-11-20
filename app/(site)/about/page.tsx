@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
-import { InlineWork } from "@/components/InlineWork";
 import { PageHero } from "@/components/PageHero";
 import { about, certifications, name } from "@/lib/projects";
 import { photo } from "@/lib/site";
@@ -24,8 +23,7 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About"
-        title="Hi, I'm Peter."
-        text="A software engineer in Uganda who builds websites and apps for businesses, schools and charities."
+        title={name}
       />
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 grid gap-14 lg:grid-cols-[1fr_1.3fr]">
         <div
@@ -53,16 +51,8 @@ export default function AboutPage() {
         <div>
           <div className="space-y-5 text-lg text-muted leading-relaxed">
             <p>
-              I&apos;m {name}, a software engineer based in Uganda. I enjoy taking a messy, real-world problem and
-              turning it into something simple that people actually want to use.
-            </p>
-            <p>
-              I&apos;ve built websites for <InlineWork id="sence">a university energy research centre</InlineWork>,{" "}
-              <InlineWork id="nambi-notes">a publishing house</InlineWork>,{" "}
-              <InlineWork id="musiconthefarm">a music school</InlineWork>,{" "}
-              <InlineWork id="sunrise">a university partnership</InlineWork>,{" "}
-              <InlineWork id="radiant-smile-foundation">a charity</InlineWork> and{" "}
-              <InlineWork id="jk-gold-souk">a catalogue where buyers can request quotes for gold bars and coins</InlineWork>.
+              I enjoy taking a messy, real-world problem and turning it into something simple that people
+              actually want to use.
             </p>
             <p>
               I was previously a Mobile App Engineer at AirQo, building their mobile app that shows live air quality
@@ -72,7 +62,6 @@ export default function AboutPage() {
               I care about the details that make a site easy to use: fast pages, clear words, and something that works
               just as well on a phone as on a computer.
             </p>
-            <p>I speak English and some German, and I&apos;m happy to work with clients anywhere in the world.</p>
           </div>
         </div>
       </section>
@@ -83,7 +72,6 @@ export default function AboutPage() {
             ["Based in", "Uganda, working worldwide"],
             ["Languages", "English, German (B1/B2)"],
             ["Builds for", "Web, Android & iPhone"],
-            ["Previously", "Mobile App Engineer, AirQo"],
             ["Certified in", "Google Cloud & cloud security"],
           ].map(([k, v]) => (
             <li key={k} className="flex justify-between gap-4 px-6 py-4">

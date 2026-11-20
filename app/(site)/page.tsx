@@ -1,13 +1,8 @@
 import Link from "next/link";
-import { Icon } from "@/components/Icon";
-import { InlineWork } from "@/components/InlineWork";
 import { Print } from "@/components/Print";
-import { ProcessList } from "@/components/ProcessList";
-import { Label, SectionHead } from "@/components/SectionHead";
 import { UgandaClock } from "@/components/UgandaClock";
 import { WorkCollage } from "@/components/WorkCollage";
 import { projects } from "@/lib/projects";
-import { services } from "@/lib/site";
 
 const byId = (id: string) => projects.find((p) => p.id === id) ?? projects[0];
 
@@ -75,96 +70,14 @@ export default function Home() {
               </Link>
             </div>
             <UgandaClock />
-            <a href="#hello" className="inline-block py-2.5 hover:text-cream">
+            <a href="#work" className="inline-block py-2.5 hover:text-cream">
               Scroll ↓
             </a>
           </div>
         </div>
       </section>
 
-      {/* Intro with inline screenshots */}
-      <section
-        id="hello"
-        className="scroll-mt-24 max-w-6xl mx-auto px-4 sm:px-6 pt-28 lg:pt-40 pb-10 space-y-16 lg:space-y-24"
-      >
-        <div className="grid gap-5 md:grid-cols-[220px_1fr] md:gap-10">
-          <div className="md:pt-3">
-            <Label>Hello</Label>
-          </div>
-          <p className="max-w-3xl text-2xl sm:text-[2rem] leading-[1.45] text-ink/85">
-            I&apos;m Peter. I&apos;ve built websites for{" "}
-            <InlineWork id="sence">a university energy research centre</InlineWork>,{" "}
-            <InlineWork id="nambi-notes">a publishing house</InlineWork>,{" "}
-            <InlineWork id="musiconthefarm">a music and arts school</InlineWork>,{" "}
-            <InlineWork id="radiant-smile-foundation">a charity</InlineWork> and{" "}
-            <InlineWork id="jk-gold-souk">a catalogue where buyers can request quotes for gold bars and coins</InlineWork>.
-          </p>
-          <p className="md:col-start-2 -mt-1 flex items-baseline gap-3">
-            <span className="h-px w-8 bg-warm self-center" aria-hidden />
-            <span className="font-display italic text-3xl text-accent">Peter</span>
-            <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-muted">Ssendegeya · Uganda</span>
-          </p>
-        </div>
-        <div className="grid gap-5 md:grid-cols-[220px_1fr] md:gap-10">
-          <div className="md:pt-2">
-            <Label>What I do</Label>
-          </div>
-          <div className="max-w-3xl">
-            <p className="text-xl leading-relaxed text-muted">
-              I help you get online with a website or app that is simple, fast and easy to look after. You don&apos;t
-              need to know anything technical. Tell me what you want to achieve and I&apos;ll handle the rest.
-            </p>
-            <p className="mt-6 font-mono text-xs uppercase tracking-[0.12em] text-muted">
-              Tap the underlined words to visit the real sites
-            </p>
-          </div>
-        </div>
-      </section>
-
       <WorkCollage />
-
-      {/* Services */}
-      <section className="grain bg-forest text-cream">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-24 lg:py-36">
-          <SectionHead dark label="Services" title="How I can help" />
-          <ul className="mt-14 border-t border-cream/15">
-            {services.map((s, i) => (
-              <li
-                key={s.title}
-                className="reveal grid gap-x-10 gap-y-3 py-8 border-b border-cream/15 md:grid-cols-[220px_1fr_1.3fr] items-start"
-              >
-                <span className="flex items-center gap-3 font-mono text-sm text-warm-light">
-                  {String(i + 1).padStart(2, "0")}
-                  <span className="text-mint">
-                    <Icon name={s.icon} className="w-5 h-5" />
-                  </span>
-                </span>
-                <h3 className="font-display text-3xl sm:text-4xl">{s.title}</h3>
-                <p className="text-cream/80 leading-relaxed md:pt-1.5">{s.text}</p>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 md:pl-[260px]">
-            <Link href="/services" className="text-mint font-medium underline underline-offset-4 hover:text-cream">
-              What&apos;s included, and common questions →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="bg-paper-alt">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-32 lg:pt-36 lg:pb-44">
-          <SectionHead
-            label="How we'd work"
-            title="Simple from start to finish"
-            text="Whether you're a one-person business or a whole team, the process stays the same."
-          />
-          <div className="mt-14 md:pl-[260px]">
-            <ProcessList />
-          </div>
-        </div>
-      </section>
     </>
   );
 }
