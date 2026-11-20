@@ -50,7 +50,7 @@ export const services = [
     title: "Online sales & payments",
     text: "Sell products or services online, take payments, and see what's selling from a simple dashboard.",
     includes: ["Product catalogue", "Online payments, for example PayPal", "Order and sales overview"],
-    examples: ["nambi-notes", "jk-gold-souk", "the-one-percent-standard"],
+    examples: ["nambi-notes"],
     icon: "cart",
   },
   {
