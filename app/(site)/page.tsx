@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { InlineWork } from "@/components/InlineWork";
@@ -8,7 +7,7 @@ import { Label, SectionHead } from "@/components/SectionHead";
 import { UgandaClock } from "@/components/UgandaClock";
 import { WorkCollage } from "@/components/WorkCollage";
 import { projects } from "@/lib/projects";
-import { photo, services } from "@/lib/site";
+import { services } from "@/lib/site";
 
 const byId = (id: string) => projects.find((p) => p.id === id) ?? projects[0];
 
@@ -50,28 +49,17 @@ export default function Home() {
               </div>
             </div>
 
-            {photo ? (
-              <div className="relative hidden sm:block justify-self-center w-full max-w-sm rotate-2 bg-card p-3 pb-12 shadow-[0_30px_60px_-24px_rgba(0,0,0,0.6)]">
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <Image src={photo} alt="Peter Ssendegeya" fill sizes="384px" priority className="object-cover" />
-                </div>
-                <p className="absolute bottom-4 left-4 font-mono text-[11px] uppercase tracking-wider text-muted">
-                  Peter Ssendegeya · Uganda
-                </p>
+            <div className="hero-prints relative hidden sm:block h-[420px] lg:h-[480px]">
+              <div className="absolute right-[4%] top-0 w-[58%] rotate-[5deg]">
+                <Print project={byId("sunrise")} n={4} sizes="300px" priority />
               </div>
-            ) : (
-              <div className="hero-prints relative hidden sm:block h-[420px] lg:h-[480px]">
-                <div className="absolute right-[4%] top-0 w-[58%] rotate-[5deg]">
-                  <Print project={byId("sunrise")} n={4} sizes="300px" priority />
-                </div>
-                <div className="absolute left-[2%] top-[18%] w-[58%] -rotate-[6deg]">
-                  <Print project={byId("musiconthefarm")} n={3} sizes="300px" priority />
-                </div>
-                <div className="absolute right-[14%] bottom-0 w-[60%] rotate-[1.5deg]">
-                  <Print project={byId("sence")} n={1} sizes="300px" priority />
-                </div>
+              <div className="absolute left-[2%] top-[18%] w-[58%] -rotate-[6deg]">
+                <Print project={byId("musiconthefarm")} n={3} sizes="300px" priority />
               </div>
-            )}
+              <div className="absolute right-[14%] bottom-0 w-[60%] rotate-[1.5deg]">
+                <Print project={byId("sence")} n={1} sizes="300px" priority />
+              </div>
+            </div>
           </div>
 
           <div className="mt-14 pt-5 border-t border-cream/15 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.12em] text-cream/75">
