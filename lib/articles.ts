@@ -53,6 +53,7 @@ export const articles: Article[] = [
         body: "Now change the meeting to Thursday while A is briefly offline. C saves Thursday, which is enough for the store to report success. When A comes back with its old copy, a lookup asks A first and accepts Tuesday as the answer. Listing all the facts takes a different path. The store asks every available server and keeps the newest version it receives for each key. With both servers reachable, the list can say Thursday while opening the individual record still gives you Tuesday.",
       },
     ],
+    architectureUrl: "https://github.com/Mozart299/mini-company-brain/blob/main/docs/architecture.md",
     githubUrl: "https://github.com/Mozart299/mini-company-brain",
   },
   {
@@ -75,6 +76,7 @@ export const articles: Article[] = [
         body: "Open the same build in two tabs and each gets its own connection to the same source of updates. There’s a wrinkle in the current code. Closing either tab removes all the listeners attached to that build, so the remaining tab can stop receiving lines too. Removing only the departing tab’s listener would let the other viewer keep watching. Reopening the page can recover the saved transcript, even after the build finishes, as long as the API process is still running. Restarting it clears the in-memory history.",
       },
     ],
+    architectureUrl: "https://github.com/Mozart299/mini-deploy/blob/main/docs/architecture.md",
     githubUrl: "https://github.com/Mozart299/mini-deploy",
   },
   {
@@ -97,6 +99,7 @@ export const articles: Article[] = [
         body: "Suppose Ben then pays UGX 30,000 for dinner for the same three passengers, split equally. His own meal costs UGX 10,000, so covering dinner earns him UGX 20,000 back. That exactly offsets his taxi debt. Across both expenses, Ben breaks even, Amina should receive UGX 30,000, and Grace owes UGX 30,000. The amounts add up to zero, a handy check you can do by hand. TripTrack displays each traveller’s estimated balance across the journey. Choosing who sends money to whom is a separate step.",
       },
     ],
+    architectureUrl: "https://github.com/Mozart299/triptrack/blob/main/docs/architecture.md",
     githubUrl: "https://github.com/Mozart299/triptrack",
   },
 ];
