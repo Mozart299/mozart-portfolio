@@ -42,6 +42,7 @@ export default async function ArticlePage({ params }: Props) {
         ))}
         <footer className="flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-6 text-accent underline-offset-4">
           <a className="underline" href={article.githubUrl}>View on GitHub</a>
+          {article.architectureUrl && <a className="underline" href={article.architectureUrl}>Full architecture</a>}
           <Link className="underline" href="/blog">All engineering notes</Link>
         </footer>
       </div>

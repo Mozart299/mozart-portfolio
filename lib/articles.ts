@@ -1,4 +1,38 @@
-export const articles = [
+export interface Article {
+  slug: string;
+  project: string;
+  topic: string;
+  title: string;
+  summary: string;
+  sections: { heading: string; body: string }[];
+  architectureUrl?: string;
+  githubUrl: string;
+}
+
+export const articles: Article[] = [
+  {
+    slug: "crashing-halfway-through-a-payment",
+    project: "ChainBank (in progress)",
+    topic: "Payments and blockchain",
+    title: "What happens if the server crashes halfway through a payment?",
+    summary: "ChainBank is a banking simulator I’m building to learn how a bank’s own records differ from blockchain settlement. When money moves between two banks, the server records the payment in its database and then sends it to the blockchain. What if it crashes between those two steps?",
+    sections: [
+      {
+        heading: "Alice sends Bob 3,000,000 xUGX",
+        body: "Alice banks with Nile Demo Bank and Bob with Rwenzori Demo Bank, so the money has to settle between the two banks on a blockchain. A background worker prepares the instruction and signs it with the bank’s key. That produces a transaction that can be sent to the chain as it is. Before sending anything, the worker saves the signed transaction in the database and marks the transfer as submitted, all in one database transaction. Only after that commit does it broadcast the transaction to the chain.",
+      },
+      {
+        heading: "The server dies before the broadcast",
+        body: "Suppose the process crashes right after the commit. The chain never heard about Alice’s payment, but the database still has the exact transaction that was meant to go out. A second job checks every open transaction every two seconds. If no receipt has appeared after 15 seconds, it sends the saved transaction again. The opposite order would be worse. If the worker broadcast first and crashed before saving, the payment could settle on the chain with no record of it in the database.",
+      },
+      {
+        heading: "Sending twice can’t move the money twice",
+        body: "Resending means the same payment can reach the chain more than once. Each one carries a settlement ID derived from the transfer’s own ID. The SettlementToken contract remembers every ID it has settled and rejects a repeat. ChainBank then logs the rejection as a harmless duplicate. If the saved transaction can no longer be mined, the worker signs a fresh one for the same settlement, and the same guard still applies. One limit remains: the design assumes a single worker, so running several would need more coordination.",
+      },
+    ],
+    architectureUrl: "https://github.com/Mozart299/chain-bank/blob/main/docs/architecture.md",
+    githubUrl: "https://github.com/Mozart299/chain-bank",
+  },
   {
     slug: "placing-a-second-copy",
     project: "Mini Company Brain",
